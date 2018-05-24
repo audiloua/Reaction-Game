@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Reaction Tester Game!</title>
+       <!-- <style type = "text/css">
+            #playground{
+                width: 200px;
+                height: 100px;
+                border: 1px solid blue;
+            }
+        </style> -->
+    </head>
+    <body>
+        <button onclick="start()">Ready?</button>
+        <p id="test"></p>
+        
+        <script>
+            function start() {
+                document.getElementById("test").innerHTML = "do you see this?";
+            } 
+        </script>
+    
+        <!-- <canvas id = "playground"></canvas> --> 
+    </body>
+</html>
