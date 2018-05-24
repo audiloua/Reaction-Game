@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Reaction Tester Game!</title>
+        <style type = "text/css">
+            #playground {
+                width: 2000px;
+                height: 1000px;
+                border: 1px solid blue;
+            }
+            
+            #shape {
+                width: 200px;
+                height: 200px;
+                background-color: red;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- <button onclick="start()">Ready?</button>
+        <p id="test"></p> -->
+        <p>Your reaction time: <span id= "timeTaken"></span></p>
+        <div id="shape"></div>
+        
+        <script type= "text/javascript">
+            /* function start() {
+                document.getElementById("test").innerHTML = "do you see this?";
+                } */
+            
+                var start = new Date().getTime();
+                
+                document.getElementById("shape").onclick = function() {
+                   
+                    var end = new Date().getTime();
+                    var timeTaken = (end - start) / 1000
+                    document.getElementById("timeTaken").innerHTML = timeTaken + " seconds";
+                    document.getElementById("shape").style.display = "none";
+                }
+            
+        </script>
+    
+        <!-- <canvas id = "playground"></canvas> --> 
+    </body>
+</html>
