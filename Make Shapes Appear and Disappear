@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Reaction Tester Game!</title>
+        <style type = "text/css">
+            #shape {
+                width: 200px;
+                height: 200px;
+                background-color: red;
+                display: none;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- <button onclick="start()">Ready?</button>
+        <p id="test"></p> -->
+        <p>Your reaction time: <span id= "timeTaken"></span></p>
+        <div id="shape"></div>
+        
+        <script type= "text/javascript">
+            /* function start() {
+                document.getElementById("test").innerHTML = "do you see this?";
+                } */
+            var start = new Date().getTime();
+            
+            function makeShapeAppear() {
+                document.getElementById("shape").style.display = "block";
+                start = new Date().getTime();
+            }
+            
+            function appearAfterDelay(){
+                setTimeout(makeShapeAppear, Math.random() * 3000);
+            }
+            
+            appearAfterDelay();
+                
+            document.getElementById("shape").onclick = function() {  
+                var end = new Date().getTime();
+                var timeTaken = (end - start) / 1000
+                 document.getElementById("timeTaken").innerHTML = timeTaken + " seconds";
+                
+                document.getElementById("shape").style.display = "none";
+                appearAfterDelay();
+                }
+            
+        </script>
+    </body>
+</html>
